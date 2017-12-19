@@ -7,6 +7,7 @@ class PlacesController < ApplicationController
   end
 
   def new_place
+  	@place = current_user.places.build
   end
 
   def list_places

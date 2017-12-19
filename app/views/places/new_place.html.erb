@@ -1,7 +1,10 @@
 <h1>Places#new_place</h1>
 <p>Find me in app/views/places/new_place.html.erb</p>
-<!-- <%= simple_form_for(@place, html: { class: 'form-vertical' }) do |form| %>
-	<%= f.input %>
-  <%= f.input %>
-  <%= f.button :submit %>
-<% end %> -->
+<div class="container">
+	<%= simple_form_for(@place, html: { class: 'form-vertical' }) do |f| %>
+		<%= f.input :name, label: 'Name'%>
+  	<%= f.input :description, label: 'Description'%>
+  	<%= f.input :address, label: 'Address'%>
+  	<%= f.button :submit %>
+	<% end %>
+</div>
