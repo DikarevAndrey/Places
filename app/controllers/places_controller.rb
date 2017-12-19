@@ -17,8 +17,10 @@ class PlacesController < ApplicationController
     logger.debug @place.category_id
     @place.category_id = params[:category_id]
     if @place.save
+      logger.debug 'Saved new place'
       redirect_to root_path
     else
+      logger.debug 'Did not save new place'
       render :new_place
     end
   end
