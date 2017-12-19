@@ -9,18 +9,25 @@ class PlacesController < ApplicationController
   def new_place
   	@place = current_user.places.build
     # @place = Place.new(user_id: current_user.id)
-    logger.debug @place
   end
 
   def create
     @place = current_user.places.build(place_params)
-    logger.debug @place.category_id
     @place.category_id = params[:category_id]
+    logger.debug @place.valid?
     if @place.save
       logger.debug 'Saved new place'
+      logger.debug @place.address
+      logger.debug @place.longitude
+      logger.debug @place.latitude
+      flash[:notice] = "Place successfully created"
       redirect_to root_path
     else
       logger.debug 'Did not save new place'
+      logger.debug @place.address
+      logger.debug @place.longitude
+      logger.debug @place.latitude
+      flash.alert = "Incorrect address"
       render :new_place
     end
   end
