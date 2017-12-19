@@ -4,6 +4,7 @@ class PlacesController < ApplicationController
   end
 
   def categories
+    @categories = Category.all.map { |e| { id: e.id, name: e.name } }
   end
 
   def new_place
@@ -33,6 +34,7 @@ class PlacesController < ApplicationController
   end
 
   def list_places
+    @categories = Category.all.map { |e| { id: e.id, name: e.name } }
   end
 
   def place_params
