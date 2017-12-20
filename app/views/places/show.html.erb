@@ -13,14 +13,17 @@
 			<div class="card ">
 				<h1><%= @place.name %></h1>
 				<p class="title"><%= @place.address %></p>
-				<p class="title">lon: <%= @place.longitude %>, lat: <%= @place.latitude %></p>
+				<p class="text-muted">lon: <%= @place.longitude %>, lat: <%= @place.latitude %></p>
+				<p class="title text-info"><%= @place.description %></p>
+
 				<div style="margin: 24px 0;">
 					<a href="#reviews" data-turbolinks="false"><i class="material-icons">comment</i></a>
 					<% if user_signed_in? && @place.user_id == current_user.id %>
-    				<a href="#"><i class="material-icons">delete_forever</i></a>
-    				<a href="#"><i class="material-icons">mode_edit</i></a>
+    				<%= link_to '<i class="material-icons">delete_forever</i>'.html_safe, place_path(@place.id), method: :delete, data: {:confirm => 'Are you sure?'} %>
+    				<%= link_to '<i class="material-icons">mode_edit</i>'.html_safe, edit_place_path(@place.id) %>
     			<% end  %>
  				</div>
+
 			</div>
 		</div>
 	</div>
@@ -28,5 +31,8 @@
 </div>
 
 <div id="reviews" class="row top-buffer">
-	
+	<div class="container">
+		<h2>Comments</h2>
+		
+	</div>
 </div>
