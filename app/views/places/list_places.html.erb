@@ -1,3 +1,36 @@
 <h1>Places#list_places</h1>
 <p>Find me in app/views/places/list_places.html.erb</p>
-<%= render 'shared/categories' %>
+<div class="container text-center top-buffer">
+	<h3>Categories</h3>
+	
+	<div class="row top-buffer">
+
+		<% @categories.take(3).each do |cat| %>
+			<div class="col-lg-4">
+				<ul class="list-group card">
+					<li class="list-group-item active"><%= cat[:name] %></li>
+					<% Place.where({ category_id: cat[:id], user_id: current_user.id }).each do |place| %>
+						<%= link_to place[:name], place_path(place.id), :class => 'list-group-item list-group-item-action' %>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+	</div>
+
+	<div class="row top-buffer">
+
+		<% @categories.drop(3).each do |cat| %>
+			<div class="col-lg-4">
+				<ul class="list-group card">
+					<li class="list-group-item active"><%= cat[:name] %></li>
+					<% Place.where({ category_id: cat[:id], user_id: current_user.id }).each do |place| %>
+						<%= link_to place[:name], place_path(place.id), :class => 'list-group-item list-group-item-action' %>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+	</div>
+
+</div>

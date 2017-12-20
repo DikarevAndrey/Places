@@ -1,0 +1,9 @@
+<h1>Places#edit</h1>
+<p>Find me in app/views/places/edit.html.erb</p>
+<div class="container">
+	<%= simple_form_for(@place, html: { class: 'form-vertical' }) do |f| %>
+		<%= f.input :name, label: 'Name'%>
+  	<%= f.input :description, label: 'Description'%>
+  	<%= f.button :submit %>
+	<% end %>
+</div>
