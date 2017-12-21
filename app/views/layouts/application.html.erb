@@ -10,18 +10,7 @@
 
   <body>
   	<%= render "shared/navbar" %>
-    <p class="notice"><%= flash[:notice] %></p>
-    <p class="alert"><%= flash[:alert] %></p>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: name %>
-    <% end %>
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
-    <div class="alert alert-success alert-dismissable fade in">
-      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-      <%= flash[:alert] %>
-    </div>
+    <%#<%= render 'shared/flash' %>
     <%= yield %>
   </body>
 </html>
