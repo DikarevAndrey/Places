@@ -6,9 +6,11 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        flash[:success] = "Comment posted!"
         make_child_comment
         format.html  { redirect_back(fallback_location: root_path) }
       else
+        flash[:error] = "Comment not posted!"
         format.html  { redirect_back(fallback_location: root_path) }
       end
     end

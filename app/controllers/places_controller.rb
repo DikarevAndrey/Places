@@ -17,7 +17,7 @@ class PlacesController < ApplicationController
   def destroy
     @place.destroy
     logger.debug 'Place destroyed'
-    flash[:notice] = "You have successfully deleted the place."
+    flash[:success] = "Place was successfully deleted!"
     redirect_to listPlaces_path
   end
 
@@ -35,11 +35,11 @@ class PlacesController < ApplicationController
     logger.debug @place.errors.full_messages
     if @place.save
       logger.debug 'Saved new place'
-      flash[:alert] = "Place successfully created"
+      flash[:success] = "Place was successfully created!"
       redirect_to @place
     else
       logger.debug 'Did not save new place'
-      # flash.alert = "Incorrect address"
+      flash.now[:error] = @place.errors.full_messages.first
       render :new_place
     end
   end
@@ -50,8 +50,10 @@ class PlacesController < ApplicationController
 
   def update
     if @place.update_attributes(place_params)
+      flash[:success] = "Place was successfully edited!"
       redirect_to @place
     else
+      flash.now[:error] = @place.errors.full_messages.first
       render :edit
     end
   end
