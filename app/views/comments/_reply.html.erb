@@ -3,7 +3,7 @@
     <div class="comment">
       <p><%= comment.body %><br></p>
       <p class="text-muted"><small>-<%= comment.user.email %></small></p>
-      <div class="comment-nav"><button class="comment-reply btn btn-link btn-xs">Reply</button></div>
+      <div class="comment-nav"><button class="comment-reply btn btn-link btn-xs"><%=t(:'Reply')%></button></div>
       <div class="reply-form">
         <%= form_for @new_comment do |f| %>
           <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
@@ -13,7 +13,7 @@
             <%= f.text_area :body, class: 'form-control' %>
           </div>
           <div class="field form-group">
-            <%= submit_tag "Post Reply", class: 'btn btn-primary' %>
+            <%= submit_tag t(:'Post Reply'), class: 'btn btn-primary' %>
           </div>
         <% end %>
       </div>

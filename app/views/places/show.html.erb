@@ -11,7 +11,7 @@
 			<div class="card ">
 				<h1><%= @place.name %></h1>
 				<p class="title"><%= @place.address %></p>
-				<p class="text-muted">lon: <%= @place.longitude %>, lat: <%= @place.latitude %></p>
+				<p class="text-muted"><%= t(:'lon:') %> <%= @place.longitude %>, <%= t(:'lat:') %> <%= @place.latitude %></p>
 				<p class="title text-info"><%= @place.description %></p>
 
 				<div style="margin: 24px 0;">
