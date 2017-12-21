@@ -11,6 +11,7 @@ class PlacesController < ApplicationController
 
   def show
     redirect_to newPlace_path unless @place
+    @new_comment = Comment.build_from(@place, current_user.id, "") if user_signed_in?
   end
 
   def destroy

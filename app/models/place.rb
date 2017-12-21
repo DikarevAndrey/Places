@@ -4,4 +4,5 @@ class Place < ApplicationRecord
 	validates_presence_of :address, :latitude, :longitude, :category
 	geocoded_by :address, :lookup => :yandex
 	after_validation :geocode
+	acts_as_commentable
 end
