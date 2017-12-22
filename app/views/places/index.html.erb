@@ -1,6 +1,6 @@
 <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
-<div id="map" style="height: 700px; width: 100%"></div>
+<div id="map" ></div>
 
 <script type="text/javascript">
   ymaps.ready(function() {
@@ -13,7 +13,7 @@
     <% Place.find_each do |pl| %>
 
     	var myPlacemark = new ymaps.Placemark([<%= pl.latitude %>, <%= pl.longitude %>], {
-        	                                	balloonContentHeader: '<%= pl.name %>',
+        	                                	balloonContentHeader: '<%= link_to pl[:name], place_path(pl.id) %>',
                                           	balloonContentBody: '<%= pl.address %>'
                                         	});
 		
