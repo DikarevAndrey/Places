@@ -31,3 +31,15 @@ ru:
   'Send me reset password instructions': 'Отправить инструкции по изменнеию пароля'
   '6 characters minimum': 'минимум 6 символов'
   'Are you sure?': 'Вы уверены?'
+  'Comment posted!': 'Комментарий сохранён!'
+  'Error posting comment!': 'Ошибка сохранения комментария'
+  'Place was successfully deleted!': 'Место удалено!'
+  'Place was successfully created!': 'Место добавлено!'
+  'Place was successfully edited!': 'Место изменено!'
+  activerecord:
+    errors:
+      models:
+        place:
+          attributes:
+            address:
+              blank: 'Адрес не может быть пустым'

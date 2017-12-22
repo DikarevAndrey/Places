@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
         make_child_comment
         format.html  { redirect_back(fallback_location: root_path) }
       else
-        flash[:error] = "Comment not posted!"
+        flash[:error] = "Error posting comment!"
         format.html  { redirect_back(fallback_location: root_path) }
       end
     end

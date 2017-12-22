@@ -17,7 +17,7 @@ class PlacesController < ApplicationController
   def destroy
     @place.destroy
     logger.debug 'Place destroyed'
-    flash[:success] = "Place was successfully deleted!"
+    flash[:notice] = "Place was successfully deleted!"
     redirect_to listPlaces_path
   end
 

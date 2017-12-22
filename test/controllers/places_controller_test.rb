@@ -6,9 +6,8 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get show" do
-    get places_show_url
+  test "should get categories" do
+    get '/categories'
     assert_response :success
   end
-
 end
