@@ -1,5 +1,4 @@
-en:
-  '': ''
+ru:
   'Post comment': 'Отправить комментарий'
   'Reply': 'Ответить'
   'Post Reply': 'Ответить'
@@ -31,3 +30,4 @@ en:
   'Forgot your password?': 'Забыли пароль?'
   'Send me reset password instructions': 'Отправить инструкции по изменнеию пароля'
   '6 characters minimum': 'минимум 6 символов'
+  'Are you sure?': 'Вы уверены?'

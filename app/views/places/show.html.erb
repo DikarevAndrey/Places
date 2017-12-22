@@ -1,9 +1,8 @@
 <div class="row top-buffer">
 
 	<div class="col-lg-8">
-		<div class="container">
-  		<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aec5ba3cc6dad5062ea60a8b571021e4a2dd98a62639e6498dc0c7717ba1ca7cb&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-		</div>
+		<div id="map" class="container"></div>
+		<%= render "shared/map" %>
 	</div>
 
 	<div class="col-lg-4 text-center">
@@ -17,7 +16,7 @@
 				<div style="margin: 24px 0;">
 					<a href="#reviews" data-turbolinks="false"><i class="material-icons">comment</i></a>
 					<% if user_signed_in? && @place.user_id == current_user.id %>
-    				<%= link_to '<i class="material-icons">delete_forever</i>'.html_safe, place_path(@place.id), method: :delete, data: {:confirm => 'Are you sure?'} %>
+    				<%= link_to '<i class="material-icons">delete_forever</i>'.html_safe, place_path(@place.id), method: :delete, data: {:confirm => t(:'Are you sure?')} %>
     				<%= link_to '<i class="material-icons">mode_edit</i>'.html_safe, edit_place_path(@place.id) %>
     			<% end  %>
  				</div>
