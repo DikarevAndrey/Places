@@ -43,3 +43,16 @@ ru:
           attributes:
             address:
               blank: 'Адрес не может быть пустым'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: 'Неверный email'
+              blank: 'Введите email'
+            password:
+              too_short: 'Некорректный пароль'
+              blank: 'Введите пароль'
+            password_confirmation:
+              confirmation: 'Введенные пароли не совпадают'
