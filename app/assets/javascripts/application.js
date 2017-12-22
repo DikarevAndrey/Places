@@ -16,3 +16,15 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//Show reply form
+$(document).on('turbolinks:load', function() {
+  $('.comment-reply').click( function() {
+     $(this).closest('.comment').find('.reply-form').toggle(400);
+  });
+});
+//Fade out flash messages
+$(document).on('turbolinks:load', function() {
+	$(".flash-message").fadeOut( 4000, function() {
+		$(this).remove(); 
+	});
+});

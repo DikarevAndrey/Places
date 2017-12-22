@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   get 'places/show'
   get 'places/new'
   root 'places#index'
-  resources :places do
-    resources :reviews
-  end
+  resources :places
+  resources :comments
   match '/categories', to: 'places#categories', via: 'get'
   match '/newPlace', to: 'places#new_place', via: 'get'
   match '/listPlaces', to: 'places#list_places', via: 'get'

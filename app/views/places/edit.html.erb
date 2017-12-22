@@ -1,7 +1,7 @@
 <div class="container">
 	<%= simple_form_for(@place, html: { class: 'form-vertical' }) do |f| %>
-		<%= f.input :name, label: 'Name'%>
-  	<%= f.input :description, label: 'Description'%>
-  	<%= f.button :submit %>
+		<%= f.input :name, label: t(:'Name')%>
+  	<%= f.input :description, label: t(:'Description')%>
+  	<%= f.submit t(:'Edit'), html: { class: 'btn btn-primary' } %>
 	<% end %>
 </div>

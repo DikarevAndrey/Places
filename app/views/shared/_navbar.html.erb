@@ -5,15 +5,15 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <%= link_to "All places", root_path, :class => 'nav-link'  %>
+        <%= link_to t(:'All places'), root_path, :class => 'nav-link'  %>
       </li>
 
       <li class="nav-item">
-        <%= link_to "Categories", '/categories', :class => 'nav-link'  %>
+        <%= link_to t(:'Categories'), '/categories', :class => 'nav-link'  %>
       </li>
 
       <li class="nav-item">
-        <%= link_to "Add a place", '/newPlace', :class => 'nav-link'  %>
+        <%= link_to t(:'Add a new place'), '/newPlace', :class => 'nav-link'  %>
       </li>
 
     </ul>
@@ -23,25 +23,25 @@
       <% if user_signed_in? %>
       
         <li class="nav-item navbar-text text-success">
-          Hello, <%= current_user.email %>
+          <%= t(:'Hello,') %> <%= current_user.email %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "My places", '/listPlaces', :class => 'nav-link' %>
+          <%= link_to t(:'My places'), '/listPlaces', :class => 'nav-link' %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => 'nav-link' %>
+          <%= link_to t(:'Sign out'), destroy_user_session_path, method: :delete, :class => 'nav-link' %>
         </li>
 
       <% else  %>
 
         <li class="nav-item">
-          <%= link_to "Sign up", new_user_registration_path, :class => 'nav-link' %>
+          <%= link_to t(:'Sign up'), new_user_registration_path, :class => 'nav-link' %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "Log in", new_user_session_path, :class => 'nav-link' %>
+          <%= link_to t(:'Sign in'), new_user_session_path, :class => 'nav-link' %>
         </li>
 
       <% end  %>
